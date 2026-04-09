@@ -1,6 +1,11 @@
 from flask import Flask, render_template
 
+# 1. 先建立 app 物件
 app = Flask(__name__)
+
+# 2. 進行 Vercel 必要的設定
+app.debug = True
+main = app  # 有些 Vercel 設定會要求指向一個變數，維持 app = app 也可以
 
 @app.route('/')
 def index():
@@ -18,10 +23,10 @@ def goals():
 def test_results():
     return render_template('test_results.html')
 
-# 這是點擊首頁右邊卡片按鈕後會跳轉的頁面
 @app.route('/job')
 def job():
     return render_template('job.html')
 
+# 3. 本地端執行
 if __name__ == '__main__':
     app.run(debug=True)
