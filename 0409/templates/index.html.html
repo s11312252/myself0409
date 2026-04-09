@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳芯霈 | 個人求職網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { 
+            --primary-pink: #f8c9d4; /* 輕柔粉 */
+            --dark-pink: #e099ad;    /* 玫瑰色 */
+            --bg-color: #fff9fa;     /* 極淡粉白 */
+        }
+        body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background-color: var(--bg-color); color: #5a5a5a; }
+        
+        /* 頂部主視覺 */
+        .hero { 
+            background: linear-gradient(135deg, var(--primary-pink), #ffffff); 
+            padding: 100px 0; 
+            border-bottom: 5px solid white;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: #7a4a58; letter-spacing: 2px; }
+        
+        /* 區塊樣式 */
+        .section-padding { padding: 80px 0; }
+        .card { 
+            border: none; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(248, 201, 212, 0.3); 
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .card:hover { transform: translateY(-5px); }
+        
+        /* 技能標籤 */
+        .skill-badge { background-color: var(--primary-pink); color: #7a4a58; padding: 8px 20px; border-radius: 50px; display: inline-block; margin: 5px; font-size: 0.9rem; font-weight: bold; }
+        
+        .section-title { color: var(--dark-pink); font-weight: bold; border-bottom: 2px solid var(--primary-pink); display: inline-block; margin-bottom: 30px; }
+        
+        /* 圖片容器樣式 */
+        .img-placeholder {
+            background-color: #f1f1f1;
+            border: 2px dashed var(--primary-pink);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            color: #999;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero text-center">
+        <div class="container">
+            <h1>陳芯霈</h1>
+            <p class="fs-4">專業後端開發者 | 求職履歷門戶</p>
+            <div class="mt-4">
+                {% for skill in skills %}
+                <span class="skill-badge">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
+
+    <div class="container section-padding">
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <h2 class="section-title">職涯測驗分析</h2>
+                <div class="card p-4">
+                    <h5 class="fw-bold" style="color: var(--dark-pink);">104 何倫碼測驗結果</h5>
+                    <p>此處將填入妳的測驗分析（例如 R/I/A 等特質描述）。</p>
+                    
+                    <div class="img-placeholder">
+                        <p>這裡是放【何倫碼六角型分析圖】的地方<br>使用 &lt;img src="圖片網址"&gt; 替換此區塊</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="這裡是放測驗結果超連結的地方" class="btn btn-outline-danger w-100" target="_blank">查看原始測驗報告</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5">
+                <h2 class="section-title">目標職位：系統工程師</h2>
+                <div class="card p-4">
+                    <h5 class="fw-bold" style="color: var(--dark-pink);">理想職缺分析</h5>
+                    <p>我正在尋找一份能夠結合 Python 與雲端技術的 MIS 職位。具備獨立解決問題的能力與對新技術的熱情。</p>
+                    
+                    <div class="img-placeholder">
+                        <p>這裡是放【人力銀行職缺截圖】的地方<br>使用 &lt;img src="圖片網址"&gt; 替換此區塊</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="這裡是放職缺詳細內容超連結的地方" class="btn btn-outline-danger w-100" target="_blank">點此前往職缺頁面</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <h2 class="section-title">為什麼我適合這份工作？</h2>
+            <div class="card p-4 shadow-sm">
+                <p>我具備紮實的後端實作經驗，尤其在 **Meme Generator (梗圖產生器)** 專案中，我獨立完成了從環境部署到 Firebase 資料庫串接的所有環節。我不僅懂得撰寫程式，更具備快速學習並解決系統環境衝突（如 ModuleNotFoundError）的應變能力。</p>
+                <p>未來我將持續深耕雲端架構與自動化維運技術，為企業創造更穩定的數位環境。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-5" style="background-color: var(--primary-pink); color: #7a4a58;">
+        <div class="container">
+            <p class="mb-0 fw-bold">陳芯霈 | 個人求職網站 Portfolio</p>
+            <small>已優化行動裝置顯示效果 (RWD)</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

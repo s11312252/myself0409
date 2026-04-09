@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳芯霈 | 個人求職網站</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-pink: #f8c9d4; --dark-pink: #e099ad; --bg-color: #fff9fa; }
+        body { font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; background-color: var(--bg-color); color: #5a5a5a; }
+        .hero h1 { 
+    font-size: 2.8rem;     /* 原本 3.5rem * 0.8 = 2.8rem */
+    font-weight: 700; 
+    color: #7a4a58; 
+    letter-spacing: 2px; 
+}
+        .section-padding { padding: 80px 0; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 25px rgba(248, 201, 212, 0.3); transition: 0.3s; background: rgba(255, 255, 255, 0.9); }
+        .card:hover { transform: translateY(-5px); }
+
+        /* 會動的導覽按鈕 */
+        .nav-btn {
+            background-color: white; color: #7a4a58; padding: 12px 35px; border-radius: 15px;
+            display: inline-block; margin: 10px; font-size: 1.1rem; font-weight: bold;
+            text-decoration: none; border: 2px solid var(--primary-pink); transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(248, 201, 212, 0.5);
+        }
+        .nav-btn:hover {
+            background-color: var(--dark-pink); color: white; transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(224, 153, 173, 0.8); border-color: var(--dark-pink);
+        }
+        .section-title { color: var(--dark-pink); font-weight: bold; border-bottom: 2px solid var(--primary-pink); display: inline-block; margin-bottom: 30px; }
+        /* 新增：個人照片樣式 */
+        .profile-photo {
+    width: 200px;          /* 180 * 1.5 = 270 */
+    height: 200px;         
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid white;
+    box-shadow: 0 10px 25px rgba(224, 153, 173, 0.5) !important;
+    transition: transform 0.6s ease;
+    margin-bottom: 5px;   /* 增加一點下方間距 */
+}
+
+/* 滑鼠移上去時照片會輕微放大 */
+.profile-photo:hover {
+    transform: scale(1.05);
+
+    /* 關於我頁面的照片樣式 */
+.about-img {
+    width: 100%;           /* 寬度隨容器調整 */
+    max-width: 400px;      /* 最大寬度限制，不讓它太大 */
+    height: auto;          /* 保持比例 */
+    border-radius: 20px;   /* 圓角效果，跟 Card 呼應 */
+    border: 5px solid white; 
+    box-shadow: 0 8px 20px rgba(248, 201, 212, 0.4); /* 柔和粉色陰影 */
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+}
+    </style>
+</head>
+<body>
+
+    <header class="hero text-center">
+    <div class="container">
+        <div class="mb-4">
+            <img src="{{ url_for('static', filename='my_photo.jpg') }}" alt="陳芯霈" class="profile-photo shadow">
+        </div>
+        
+        <h1>陳芯霈</h1>
+        <p class="fs-4">盡責努力 ‧ 追求卓越 | 個人求職履歷</p>
+        
+        <div class="mt-4">
+            <a href="/about" class="nav-btn">👤 介紹</a>
+            <a href="/goals" class="nav-btn">🎯 目標</a>
+        </div>
+    </div>
+</header>
+    <div class="container section-padding">
+        <div class="row">
+            <div class="col-lg-6 mb-5">
+                <h2 class="section-title">職涯測驗分析</h2>
+                <div class="card p-4 text-center h-100">
+                    <h5 class="fw-bold" style="color: var(--dark-pink); margin-top: 20px;">UCAN / 104 分析報告</h5>
+<p class="py-3 fw-bold mt-3" style="font-size: 1.1rem;">
+透過專業大數據評測，深度分析我的職業性格代碼與興趣何倫碼。</p>                    <div class="mt-auto mb-3">
+                        <a href="/test_results" class="btn btn-outline-danger w-100 py-2">查看詳細數據報告</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5">
+                <h2 class="section-title">目標職位：經營管理</h2>
+                <div class="card p-4 text-center h-100">
+                    <h5 class="fw-bold" style="color: var(--dark-pink); margin-top: 20px;">理想職缺分析</h5>
+<p class="py-3 fw-bold mt-3" style="font-size: 1.1rem;">
+    致力於尋求結合資訊邏輯與管理策略的 MIS 相關職位。
+</p>                    <div class="mt-auto mb-3">
+                        <a href="/job" class="btn btn-outline-danger w-100 py-2">點此前往目標職缺與自傳</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-5" style="background-color: var(--primary-pink); color: #7a4a58;">
+        <p class="mb-0 fw-bold">陳芯霈 | 個人求職網站 Portfolio</p>
+    </footer>
+
+</body>
+</html>

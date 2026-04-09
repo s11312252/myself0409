@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職涯大數據分析</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-pink: #f8c9d4; --dark-pink: #e099ad; --bg-color: #fff9fa; }
+        body { background-color: var(--bg-color); padding: 50px 0; color: #5a5a5a; font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif; }
+        .glass-card { background: white; border-radius: 25px; padding: 40px; box-shadow: 0 10px 30px rgba(224, 153, 173, 0.15); margin-bottom: 40px; border: 1px solid rgba(248, 201, 212, 0.5); }
+        .section-title { color: var(--dark-pink); font-weight: bold; margin-bottom: 30px; text-align: center; border-bottom: 2px solid var(--primary-pink); display: inline-block; width: 100%; padding-bottom: 10px; }
+        
+        /* 極簡大字樣式 */
+        .code-title { background-color: transparent; color: #4a4a4a; font-size: 5rem; font-weight: 900; display: inline-block; letter-spacing: 15px; line-height: 1; border: none; }
+        .code-subtitle { font-size: 1.2rem; color: #e099ad; letter-spacing: 2px; font-weight: bold; margin-top: 10px; }
+
+        .table-rounded { border-radius: 15px; overflow: hidden; border: 1px solid var(--primary-pink); }
+        .table thead { background-color: var(--primary-pink); color: #7a4a58; }
+        .back-btn { background-color: var(--primary-pink); color: #7a4a58; border-radius: 50px; text-decoration: none; padding: 12px 35px; font-weight: bold; transition: 0.3s; }
+        .back-btn:hover { background-color: var(--dark-pink); color: white; }
+        
+        /* 104 專屬標籤樣式 */
+        .job-tag { background-color: #fdf2f5; color: #e099ad; border: 1px solid #f8c9d4; padding: 5px 15px; border-radius: 50px; display: inline-block; margin: 5px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="container" style="max-width: 1000px;">
+    <h1 class="text-center mb-5" style="color: var(--dark-pink); font-weight: bold;">職涯測驗大數據報告</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="glass-card text-center h-100">
+                <h3 class="section-title">UCAN 職業性格</h3>
+                <div class="py-2">
+                    <div class="code-title" style="font-size: 3.5rem;">ERS</div>
+                    <div class="code-subtitle">企業 ‧ 實用 ‧ 社會</div>
+                </div>
+                <div class="table-rounded mt-3">
+                    <table class="table mb-0 small">
+                        <thead><tr><th>類型</th><th>得分</th><th>PR</th></tr></thead>
+                        <tbody>
+                            <tr><td>企業型</td><td>11</td><td>98</td></tr>
+                            <tr><td>實用型</td><td>8</td><td>88</td></tr>
+                            <tr><td>社會型</td><td>8</td><td>79</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="glass-card text-center h-100">
+                <h3 class="section-title">104 興趣何倫碼</h3>
+                <div class="py-2">
+                    <div class="code-title" style="font-size: 3.5rem;">SA</div>
+                    <div class="code-subtitle">社會 ‧ 藝術</div>
+                </div>
+                <div class="p-3 bg-light rounded-4 text-start small mt-2">
+                    待人和善，重視團體契合度，具備敏銳直覺與創意，擅長運用文字與藝術創作表達想像力。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <h3 class="section-title">104 推薦從事職務</h3>
+        <div class="text-center py-2">
+            <span class="job-tag">媒體社群行銷</span>
+            <span class="job-tag">業務銷售</span>
+            <span class="job-tag">人力資源管理</span>
+            <span class="job-tag">藝術傳播製作</span>
+            <span class="job-tag">組織經營領導</span>
+            <span class="job-tag">行政總務秘書</span>
+            <span class="job-tag">客服/門市/服務</span>
+        </div>
+    </div>
+
+    <div class="glass-card">
+        <h3 class="section-title">高匹配職涯領域 (綜合)</h3>
+        <div class="table-rounded">
+            <table class="table mb-0 text-center">
+                <thead><tr><th>職涯領域</th><th>強度/得分</th><th>PR 值</th></tr></thead>
+                <tbody>
+                    <tr><td>資訊科技</td><td>2.90</td><td>84</td></tr>
+                    <tr><td>行銷與銷售</td><td>4.40</td><td>99</td></tr>
+                    <tr><td>司法、法律與公共安全</td><td>4.40</td><td>98</td></tr>
+                    <tr><td>教育與訓練</td><td>2.90</td><td>69</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="text-center mt-5 pb-5">
+        <a href="/" class="back-btn">← 返回個人首頁</a>
+    </div>
+</div>
+
+</body>
+</html>
