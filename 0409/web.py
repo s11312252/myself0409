@@ -1,12 +1,8 @@
 from flask import Flask, render_template
 
-# 1. 先建立 app 物件
 app = Flask(__name__)
 
-# 2. 進行 Vercel 必要的設定
-app.debug = True
-main = app  # 有些 Vercel 設定會要求指向一個變數，維持 app = app 也可以
-
+# 這些路由都要放在 app = Flask 之後
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -27,6 +23,6 @@ def test_results():
 def job():
     return render_template('job.html')
 
-# 3. 本地端執行
+# Vercel 部署時這段可以不用跑，但本地端還是需要它
 if __name__ == '__main__':
     app.run(debug=True)
